@@ -30,7 +30,7 @@ ColorDamping: 16
 ColorRadius: 50
 OutputOrdering: 0
 OutputSmoothness: 3
-ProcessingSection: False
+ProcessingSection: True
 ShadowSection: False
 ColormapSection: False
 LandcoverSection: True

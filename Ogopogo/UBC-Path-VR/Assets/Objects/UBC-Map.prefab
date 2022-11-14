@@ -28,7 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3405190314377568329}
   - {fileID: 3405190314088432130}
   - {fileID: 6341694999839206786}
   m_Father: {fileID: 0}
@@ -2128,11 +2127,11 @@ MonoBehaviour:
   - {x: -75.365906, y: -0.000015258789, z: 50.330505}
   - {x: -15.585144, y: -0.000015258789, z: 50.14331}
   m_Textures0:
-  - {x: 75.52314, y: -31.162306}
-  - {x: 15.742084, y: -31.162306}
+  - {x: 75.52313, y: -31.162306}
+  - {x: 15.742083, y: -31.162308}
   - {x: 67.19667, y: -9.394854}
-  - {x: 23.88443, y: -10.173743}
-  - {x: 52.509506, y: 0.0000030806077}
+  - {x: 23.884428, y: -10.173743}
+  - {x: 52.50951, y: 0.000002861023}
   - {x: 0.000009057789, y: 0.000003588415}
   - {x: 43.226913, y: 20.5332}
   - {x: 0.000009057789, y: 14.146108}
@@ -2140,10 +2139,10 @@ MonoBehaviour:
   - {x: -67.08188, y: -0.000015258789}
   - {x: -0.000030517578, y: 17.04301}
   - {x: -67.08188, y: 17.04301}
-  - {x: -10.894594, y: -0.000015258789}
+  - {x: -10.894593, y: -0.000015258789}
   - {x: -61.90229, y: -0.000015258789}
-  - {x: -10.894594, y: 17.04301}
-  - {x: -47.170067, y: 17.04301}
+  - {x: -10.894593, y: 17.04301}
+  - {x: -47.170063, y: 17.04301}
   - {x: -67.08188, y: 36.76355}
   - {x: -23.76593, y: 37.880005}
   - {x: -67.08188, y: 0}
@@ -2155,21 +2154,21 @@ MonoBehaviour:
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
-  - {x: -0.9999951, y: 1.448377e-10, z: 0.0031313405, w: -1}
-  - {x: -0.99995434, y: -0.0073455456, z: -0.0061136745, w: -1}
-  - {x: -0.99995434, y: -0.0073455456, z: -0.0061136745, w: -1}
-  - {x: -0.9997738, y: -0.014701034, z: -0.015372614, w: -1}
-  - {x: -0.29680562, y: 0.000000024648585, z: 0.95493793, w: -1}
-  - {x: -0.40389514, y: -0.083087265, z: 0.9110243, w: -1}
-  - {x: -0.40389514, y: -0.083087265, z: 0.9110243, w: -1}
+  - {x: -0.9999952, y: -0.000000024691085, z: 0.0031313605, w: -1}
+  - {x: -0.99995434, y: -0.0073455726, z: -0.0061136633, w: -1}
+  - {x: -0.99995434, y: -0.0073455726, z: -0.0061136633, w: -1}
+  - {x: -0.9997738, y: -0.014701062, z: -0.015372613, w: -1}
+  - {x: -0.29680562, y: 0.000000011497961, z: 0.95493793, w: -1}
+  - {x: -0.40389517, y: -0.08308728, z: 0.9110243, w: -1}
+  - {x: -0.40389517, y: -0.08308728, z: 0.9110243, w: -1}
   - {x: -0.52376175, y: -0.16958697, z: 0.83481365, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
-  - {x: 0.16240741, y: 0, z: -0.9867238, w: -1}
-  - {x: 0.08554369, y: -0.0010691155, z: -0.99633384, w: -1}
-  - {x: 0.08554369, y: -0.0010691155, z: -0.99633384, w: -1}
+  - {x: 0.1624074, y: 0, z: -0.9867238, w: -1}
+  - {x: 0.08554369, y: -0.0010691189, z: -0.99633384, w: -1}
+  - {x: 0.08554369, y: -0.0010691189, z: -0.99633384, w: -1}
   - {x: 0, y: 0, z: -1, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
@@ -2284,98 +2283,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!1 &3405190314377568333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3405190314377568329}
-  - component: {fileID: 3405190314377568330}
-  - component: {fileID: 3405190314377568331}
-  - component: {fileID: 3405190314377568332}
-  m_Layer: 0
-  m_Name: Terrain 1-1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483646
-  m_IsActive: 1
---- !u!4 &3405190314377568329
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405190314377568333}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -490.77142, y: -67.03455, z: -170.26175}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2330559364817058383}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!218 &3405190314377568330
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405190314377568333}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 200f3fc35078c6b46a1d49dd88f6156e, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 26.2
-  m_SplatMapDistance: 4000
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 1
-  m_DrawTreesAndFoliage: 1
-  m_StaticShadowCaster: 0
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ScaleInLightmap: 0.8
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 1
-  m_AllowAutoConnect: 1
---- !u!154 &3405190314377568331
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405190314377568333}
-  m_Material: {fileID: 0}
-  m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 200f3fc35078c6b46a1d49dd88f6156e, type: 2}
-  m_EnableTreeColliders: 1
---- !u!114 &3405190314377568332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405190314377568333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17748000a20927c458e1454660870d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setMapDistance: 1
 --- !u!1 &3405190314558305497
 GameObject:
   m_ObjectHideFlags: 0
