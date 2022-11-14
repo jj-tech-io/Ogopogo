@@ -1,8 +1,8 @@
 Terrain Generation Settings
 
 Address: Swiss Alps
-Latitude: 49.9452964635859 Degree
-Longitude: -119.389683008194 Degree
+Latitude: 0 Degree
+Longitude: 0 Degree
 NewTerrainGrid: _1
 NewTerrainSizeX: 1000
 NewTerrainSizeZ: 1000
@@ -10,10 +10,10 @@ NewTerrainPixelError: 26.2
 LatExtents: 1
 LonExtents: 1
 SquareArea: True
-ArbitraryTop: 49.9497880400065
-ArbitraryLeft: -119.396662722072
-ArbitraryBottom: 49.9408048871653
-ArbitraryRight: -119.382703294316
+ArbitraryTop: 0.00449157642059761
+ArbitraryLeft: -0.00449157642059761
+ArbitraryBottom: -0.00449157642059761
+ArbitraryRight: 0.00449157642059761
 MapType: 4
 SaveASCII: False
 SaveRAW: False

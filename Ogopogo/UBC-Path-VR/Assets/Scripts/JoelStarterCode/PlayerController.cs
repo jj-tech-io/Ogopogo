@@ -5,24 +5,34 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 20.0f;
-    [SerializeField]  private Rigidbody rb;
+    [SerializeField]  public Rigidbody rb;
     
     private Vector3 velocity;
     [SerializeField] private float lookSpeed = 10f;
     [SerializeField] private float moveForce = 0.1f;
+    [SerializeField] private bool useMouse = false;
+    
     private Vector2 rotation = Vector2.zero;
     private CharacterController characterController;
     void OnEnable() {
        
-        rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
     }
 
-
+    void TurnTowards(Vector3 direction)
+    {
+        float singleStep = lookSpeed * Time.deltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, singleStep, 0.0f);
+        transform.rotation = Quaternion.LookRotation(newDirection);
+    }
     private void FixedUpdate() {
         velocity = rb.velocity;      //to get a Vector3 representation of the velocity
         float speed = velocity.magnitude;             // to get magnitude
-
+        if(useMouse)
+        {
+            MouseLook();
+        }
 
     }
     
@@ -34,26 +44,26 @@ public class PlayerController : MonoBehaviour
     }
     public void MoveForward()
     {
-        //Translate(transform.forward);
-        rb.AddForce(transform.forward * moveForce, ForceMode.Impulse);
+        Translate(transform.forward);
+        //rb.AddForce(transform.forward * moveForce, ForceMode.Impulse);
     }
 
     public void MoveBackward()
     {
-        //Translate(-transform.forward);
-        rb.AddForce(-transform.forward.normalized * moveForce, ForceMode.Impulse);
+        Translate(-transform.forward);
+        //rb.AddForce(-transform.forward.normalized * moveForce, ForceMode.Impulse);
     }
 
     public void MoveRight()
     {
-        //Translate(transform.right);
-        rb.AddForce(transform.right.normalized * moveForce, ForceMode.Impulse);
+        Translate(transform.right);
+        //rb.AddForce(transform.right.normalized * moveForce, ForceMode.Impulse);
     }
 
     public void MoveLeft()
     {
-        //Translate(-transform.right);
-        rb.AddForce(-transform.right.normalized * moveForce, ForceMode.Impulse);
+        Translate(-transform.right);
+        //rb.AddForce(-transform.right.normalized * moveForce, ForceMode.Impulse);
     }
 
     public void Jump() 
@@ -71,12 +81,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void TurnLeft() {
-        //TurnTowards(-transform.right);
+
         transform.Rotate(-Vector3.up * lookSpeed * Time.deltaTime, Space.Self);
 
     }
     public void TurnRight() {
-        //TurnTowards(transform.right);
+
         transform.Rotate(Vector3.up * lookSpeed * Time.deltaTime, Space.Self);
 
     }
@@ -98,7 +108,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"=========  {transform.name}");
     }
 
-    public void Look() // Look rotation (UP down is Camera) (Left right is Transform rotation)
+    public void MouseLook() // Look rotation (UP down is Camera) (Left right is Transform rotation)
     {
         rotation.y += Input.GetAxis("Mouse X");
         rotation.x += -Input.GetAxis("Mouse Y");
