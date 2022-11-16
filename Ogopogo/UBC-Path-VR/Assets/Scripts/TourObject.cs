@@ -4,56 +4,71 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using System;
 public class TourObject : MonoBehaviour
 {
+    //particle system for the tour object
     [SerializeField] ParticleSystem explode = null;
+    //item labels + descriptions  and their corrosponding Text Mesh UI
     [SerializeField] private string itemNameTxt;
     [SerializeField] private TextMeshProUGUI itemNameTM = null;
-    [SerializeField] private string itemDescriptionTxt;
+    [SerializeField] private string itemDescriptionTxt; //item description
+    [SerializeField] private string itemLinkTxt; //Url for the item
     [SerializeField] private TextMeshProUGUI itemDescriptionTM = null;
+    //Audio clip for the tour object
     [SerializeField] private AudioClip infoClip;
-
-    [SerializeField] private GameObject parent;
-    [SerializeField] private MeshRenderer meshRenderer;
+    private float audioDuration;
+    private int audioSeconds;
+    //Tour Icon Parent Object (Must have a mesh collider)
+    [SerializeField] private GameObject tourIcon = null;
+    private MeshCollider meshCollider;
+    //Material used for albedo color fading
     private Material material;
 
     private void Awake() {
-            
-            meshRenderer = parent.GetComponent<MeshRenderer>();
-            material = meshRenderer.material;
+            audioDuration = infoClip.length;
+            audioSeconds = (int)Math.Ceiling(audioDuration);
+            // Debug.Log("Clip Length " + audioSeconds);
+            meshCollider = tourIcon.GetComponent<MeshCollider>();
+            material = tourIcon.GetComponent<Renderer>().material;
             itemNameTM.text = itemNameTxt;
-            
-
     }
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other) {
+        meshCollider.enabled = false;
         if(other.CompareTag("Player")) {
             itemNameTM.text = "";
             explode.Play(); 
             //samar play the information audio
             AudioSource.PlayClipAtPoint(infoClip, transform.position);
+            StartCoroutine(clearText());
             // pointsText.text = map.Any() ? map[tourItem] : "No data";
             // itemDescriptionTM.text = map.Any() ? map[itemNameTxt] : "No data";
             itemDescriptionTM.text = itemDescriptionTxt;
-            StartCoroutine(objectExplodeDestroy());         
+            StartCoroutine(iconFade());
            
         }
     }
 
 
-    IEnumerator objectExplodeDestroy() {
+    IEnumerator iconFade() {
         
         for(int i = 0; i < 10; i++) {
             Color color = material.color;
             color.a = (10f-(float)i )/10f;
-
-            Debug.Log(color.a.ToString());
+            // Debug.Log(color.a.ToString());
             material.color = color;
             yield return new WaitForSeconds(.1f);
         }
-        yield return new WaitForSeconds(10f);
+
+    }
+
+    IEnumerator clearText() {
+        yield return new WaitForSeconds(audioDuration);
+        itemDescriptionTM.text = itemLinkTxt;
+        yield return new WaitForSeconds(2f);
         itemDescriptionTM.text = "";
-        Destroy(parent, 1.5f);
+        Destroy(tourIcon, 1.5f);
     }
 }
