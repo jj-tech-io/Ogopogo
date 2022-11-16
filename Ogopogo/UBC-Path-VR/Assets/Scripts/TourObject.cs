@@ -16,7 +16,8 @@ public class TourObject : MonoBehaviour
     [SerializeField] private string itemLinkTxt; //Url for the item
     [SerializeField] private TextMeshProUGUI itemDescriptionTM = null;
     //Audio clip for the tour object
-    [SerializeField] private AudioClip infoClip;
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip infoClip;
     private float audioDuration;
     private int audioSeconds;
     //Tour Icon Parent Object (Must have a mesh collider)
@@ -24,6 +25,8 @@ public class TourObject : MonoBehaviour
     private MeshCollider meshCollider;
     //Material used for albedo color fading
     private Material material;
+   
+  
 
     private void Awake() {
             audioDuration = infoClip.length;
@@ -32,16 +35,20 @@ public class TourObject : MonoBehaviour
             meshCollider = tourIcon.GetComponent<MeshCollider>();
             material = tourIcon.GetComponent<Renderer>().material;
             itemNameTM.text = itemNameTxt;
+
     }
 
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other) {
+        
         meshCollider.enabled = false;
         if(other.CompareTag("Player")) {
             itemNameTM.text = "";
-            explode.Play(); 
+            explode.Play();            
             //samar play the information audio
-            AudioSource.PlayClipAtPoint(infoClip, transform.position);
+            audioSource.Stop();
+
+            audioSource.PlayOneShot(infoClip);
             StartCoroutine(clearText());
             // pointsText.text = map.Any() ? map[tourItem] : "No data";
             // itemDescriptionTM.text = map.Any() ? map[itemNameTxt] : "No data";
