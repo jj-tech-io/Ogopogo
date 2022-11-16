@@ -11,6 +11,7 @@ public class TourObject : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemNameTM = null;
     [SerializeField] private string itemDescriptionTxt;
     [SerializeField] private TextMeshProUGUI itemDescriptionTM = null;
+    [SerializeField] private AudioClip infoClip;
 
     [SerializeField] private GameObject parent;
     [SerializeField] private MeshRenderer meshRenderer;
@@ -29,7 +30,9 @@ public class TourObject : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")) {
             itemNameTM.text = "";
-            explode.Play();
+            explode.Play(); 
+            //samar play the information audio
+            AudioSource.PlayClipAtPoint(infoClip, transform.position);
             // pointsText.text = map.Any() ? map[tourItem] : "No data";
             // itemDescriptionTM.text = map.Any() ? map[itemNameTxt] : "No data";
             itemDescriptionTM.text = itemDescriptionTxt;
@@ -49,7 +52,7 @@ public class TourObject : MonoBehaviour
             material.color = color;
             yield return new WaitForSeconds(.1f);
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         itemDescriptionTM.text = "";
         Destroy(parent, 1.5f);
     }
