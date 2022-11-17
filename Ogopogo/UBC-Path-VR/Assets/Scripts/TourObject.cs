@@ -31,7 +31,7 @@ public class TourObject : MonoBehaviour
     private void Awake() {
             audioDuration = infoClip.length;
             audioSeconds = (int)Math.Ceiling(audioDuration);
-            // Debug.Log("Clip Length " + audioSeconds);
+            Debug.Log("Cip Name: " + itemNameTxt + " Clip Length " + audioSeconds);
             meshCollider = tourIcon.GetComponent<MeshCollider>();
             material = tourIcon.GetComponent<Renderer>().material;
             itemNameTM.text = itemNameTxt;
@@ -59,7 +59,7 @@ public class TourObject : MonoBehaviour
     }
 
 
-    IEnumerator iconFade() {
+   private IEnumerator iconFade() {
         
         for(int i = 0; i < 10; i++) {
             Color color = material.color;
@@ -71,11 +71,11 @@ public class TourObject : MonoBehaviour
 
     }
 
-    IEnumerator clearText() {
+    private IEnumerator clearText() {
         yield return new WaitForSeconds(audioDuration);
-        itemDescriptionTM.text = itemLinkTxt;
-        yield return new WaitForSeconds(2f);
         itemDescriptionTM.text = "";
         Destroy(tourIcon, 1.5f);
+        
+        
     }
 }
