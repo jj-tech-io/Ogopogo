@@ -18,6 +18,10 @@ public class TourObject : MonoBehaviour
     //Audio clip for the tour object
     [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip infoClip;
+   
+  
+   
+
     private float audioDuration;
     private int audioSeconds;
     //Tour Icon Parent Object (Must have a mesh collider)
@@ -35,7 +39,7 @@ public class TourObject : MonoBehaviour
             meshCollider = tourIcon.GetComponent<MeshCollider>();
             material = tourIcon.GetComponent<Renderer>().material;
             itemNameTM.text = itemNameTxt;
-
+            
     }
 
     // Start is called before the first frame update
@@ -49,6 +53,7 @@ public class TourObject : MonoBehaviour
             audioSource.Stop();
 
             audioSource.PlayOneShot(infoClip);
+          
             StartCoroutine(clearText());
             // pointsText.text = map.Any() ? map[tourItem] : "No data";
             // itemDescriptionTM.text = map.Any() ? map[itemNameTxt] : "No data";
